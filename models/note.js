@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', false)
 
-const url = process.env.MONGODB_URI 
+const url = process.env.MONGODB_URI
 //To define the value of an environment variable if there is no .env file,
 //run command: MONGODB_URI="your_connection_string_here" npm run dev
 //.env file is already made so it's not neccesary anymore.
@@ -10,7 +10,7 @@ const url = process.env.MONGODB_URI
 console.log('connecting to', url)
 mongoose.connect(url, { family: 4 })
 
-  .then(result => {
+  .then(() => {
     console.log('connected to MongoDB')
   })
   .catch(error => {
